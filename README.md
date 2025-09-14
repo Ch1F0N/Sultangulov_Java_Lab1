@@ -408,25 +408,35 @@ lab1Method.printDays(week);
 ---
 
 ## Задача 11 (Числа наоборот.):
-> **Задача 11 заключается в том, что.**
+> **Задача 11 заключается в том, чтобы реализовать метод, который будет выводить значения от заданного числа 'x' до 0.**
 
 Для выполнения этого задания я создал метод **public String reverseListNums (int x)**:
 ```java
 public String reverseListNums (int x) {
     for (int i = x; i >= 0; i--) {
-        System.out.println(i);
+        System.out.print(i + " ");
     }
     return "";
 }
 ```
+В цикле for я задал новую переменную 'i', которая изначально равна значению 'x', а далее с каждый шагов она уменьшается на 1, пока не дойдёт до нуля.
+```java
+for (int i = x; i >= 0; i--)
+```
 
 ---
 **Реализуем пользовательский ввод**
-
+```java
+System.out.println("Выводим строки от числа x до 0!");
+System.out.print("Введите число x: ");
+int reverseNum = scanner.nextInt();
+System.out.println("Ответ: ");
+lab1Method.reverseListNums(reverseNum);
+```
 ---
 
 ## Задача 12 (Степень числа.):
-> **Задача 12 заключается в том, что.**
+> **Задача 12 заключается в том, чтобы реализовать метод, который будет возводить заданное число 'x' в степень 'y'.**
 
 Для выполнения этого задания я создал метод **public int pow (int x, int y)**:
 ```java
@@ -439,14 +449,26 @@ public int pow (int x, int y) {
     return x;
 }
 ```
+Переменную 'y' я использовал как вспомогательную для счёта шагов цикла **while** и с каждым таким шагом я умножал число 'x' на само себя, предварительно записав её значение в новую переменную 'i'(т.к переменная 'x' будет обновляться, а 'i' будет оставаться неизменной):
+```java
+int i = x;
+x *= i;
+```
 
 ---
 **Реализуем пользовательский ввод**
-
+```java
+System.out.println("Возводим число 'x' в степень 'y'!");
+System.out.print("Введите число x: ");
+int normal = scanner.nextInt();
+System.out.print("Введите число y: ");
+int exponent = scanner.nextInt();
+System.out.println("Ответ: " + lab1Method.pow(normal, exponent));
+```
 ---
 
 ## Задача 13 (Одинаковость.):
-> **Задача 13 заключается в том, что.**
+> **Задача 13 заключается в том, чтобы реализовать метод, который будет выводить 'true', если все цифры в заданном числе 'x' одинаковые и 'false' в ином случае.**
 
 Для выполнения этого задания я создал метод **public boolean equalNum (int x)**:
 ```java
@@ -465,14 +487,28 @@ public boolean equalNum (int x) {
     return true;
 }
 ```
+В переменную 'y' я сразу же записываю последнюю цифру числа 'x', т.к если все цифры будут одинаковые, то они обязательно будут равны 'y'. С помощью переменной 'z' я буду сравнивать её с переменной 'y' внутри цикла **while**, используя конструкцию **if-else**, пока число 'x' не станет равно 0 (цифры для проверки закончились):
+```java
+if (z == y) {       // Пока z == y - убираем у числа 'x' последюю цифру
+    x /= 10;
+}
+else {              // Как только цифра 'z' отличается от 'y' - возвращаем 'false'
+    return false;
+```
 
 ---
 **Реализуем пользовательский ввод**
+```java
+System.out.println("Определяем, все ли цифры в числе 'x' одинаковые! (true/false)");
+System.out.print("Введите число x: ");
+int same = scanner.nextInt();
+System.out.println("Ответ: " + lab1Method.equalNum(same));
+```
 
 ---
 
 ## Задача 14 (Левый треугольник.):
-> **Задача 14 заключается в том, что.**
+> **Задача 14 заключается в том, чтобы реализовать метод, который будет строить треугольник из звёздочек, где кол-во звёзд в строке равно номеру строки.**
 
 Для выполнения этого задания я создал метод **public void leftTriangle (int x)**:
 ```java
@@ -485,63 +521,114 @@ public void leftTriangle (int x) {
      }
 }
 ```
-
----
-**Реализуем пользовательский ввод**
-
----
-
-## Задача 15 (Угадайка.):
-> **Задача 15 заключается в том, что.**
-
-Для выполнения этого задания я создал метод **public void guessGame()**:
+Использую цикл **for** и использую вспомогательную переменную 'i' для увеличения кол-ва звёздочек с каждой последующей строкой, пока 'i' не станет <= 'x':
 ```java
-public void guessGame() {
-    int user_try = 0;
-    Random rand = new Random();
-    int answer = rand.nextInt(0,10);
-    while (true) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Угадайте какая цифра от 0 до 9 была задана: ");
-        int user_input = scanner.nextInt();
-
-        if (user_input == answer) {
-            user_try += 1;
-            if (user_try % 10 == 1 & user_try != 11) {
-                System.out.println("Поздравляем, вы угадали число за " + user_try + " попытку!");
-                break;
-            }
-
-            else if (user_try % 10 == 2 || user_try % 10 == 3 || user_try % 10 == 4 & user_try != 12  & user_try != 13  & user_try != 14) {
-                System.out.println("Поздравляем, вы угадали число за " + user_try + " попытки!");
-                break;
-            }
-
-            else {
-                System.out.println("Поздравляем, вы угадали число за " + user_try + " попыток!");
-                break;
-            }
-        }
-
-        else if (user_input > 9 || user_input < 0) {
-            System.out.println("Вы ввели число, которого нет в выборе!");
-        }
-
-        else {
-            System.out.println("Вы не угадали, попробуйте ещё раз!");
-            user_try += 1;
-        }
-    }
+for (int i = 1; i <= x; i++) {
+    repeats = star.repeat(i);
+    System.out.println(repeats);
 }
 ```
 
 ---
 **Реализуем пользовательский ввод**
+```java
+System.out.println("Строим треугольник из звёздочек!");
+System.out.print("Введите число x: ");
+int triangle = scanner.nextInt();
+System.out.println("Ответ: ");
+lab1Method.leftTriangle(triangle);
+```
+---
 
+## Задача 15 (Угадайка.):
+> **Задача 15 заключается в том, чтобы реализовать метод, который будет загадывать цифру от 0 до 9 и пользователь должен будет её отгадать.**
+
+Для выполнения этого задания я создал метод **public void guessGame()**:
+```java
+public void guessGame() {
+int userTry = 0;
+Random rand = new Random();
+int answer = rand.nextInt(0,10);
+while (true) {
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Угадайте какая цифра от 0 до 9 была задана: ");
+    int userInput = scanner.nextInt();
+
+    if (userInput == answer) {
+        userTry += 1;
+        if (userTry % 10 == 1 & userTry != 11) {
+            System.out.println("Поздравляем, вы угадали число за " + userTry + " попытку!");
+            break;
+        }
+
+        else if (userTry % 10 == 2 || userTry % 10 == 3 || userTry % 10 == 4 & userTry != 12  & userTry != 13  & userTry != 14) {
+            System.out.println("Поздравляем, вы угадали число за " + userTry + " попытки!");
+            break;
+        }
+
+        else {
+            System.out.println("Поздравляем, вы угадали число за " + userTry + " попыток!");
+            break;
+        }
+    }
+
+    else if (userInput > 9 || userInput < 0) {
+        System.out.println("Вы ввели число, которого нет в выборе!");
+    }
+
+    else {
+        System.out.println("Вы не угадали, попробуйте ещё раз!");
+        userTry += 1;
+    }
+}
+}
+```
+Задаю новую переменную 'userTry', в которую буду записывать кол-во попыток, которые пришлось сделать пользователю, чтобы отгадать число:
+```java
+int userTry = 0;
+```
+Создаю рандомный правильный ответ от 0 до 9 с помощью встроенного метода **Random()** и записываю это значение в переменную 'answer':
+```java
+Random rand = new Random();
+int answer = rand.nextInt(0,10);   // 10 не учитывается
+```
+Запускаю цикл **while (true)**, чтобы программа работала до тех пор пока пользователь не отгадает правильное число.
+
+Использую конструкцию **if-else**, чтобы определить равно ли значение, которое ввёл пользователь загаданному программой:
+```java
+if (userInput == answer) {
+userTry += 1;   // Прибавляем +1 попытку 
+if (userTry % 10 == 1 & userTry != 11) {
+    System.out.println("Поздравляем, вы угадали число за " + userTry + " попытку!");
+    break;
+}
+```
+Если число, которое ввёл пользователь не равно загаданному, то мы сообщаем пользователю, что он не угадал и прибавляем +1 попытку:
+```java
+else {
+    System.out.println("Вы не угадали, попробуйте ещё раз!");
+    userTry += 1;
+}
+```
+Также проверяем, чтобы пользователь не ввёл значение меньше 0 или больше 9, чтобы не насчитывать лишние попытки:
+```java
+else if (userInput > 9 || userInput < 0) {
+    System.out.println("Вы ввели число, которого нет в выборе!");
+}
+```
+
+---
+**Реализуем пользовательский ввод**
+Здесь в отличие от других задач пользовательский ввод реализован внутри самого метода:
+```java
+Scanner scanner = new Scanner(System.in);
+System.out.print("Угадайте какая цифра от 0 до 9 была задана: ");
+int user_input = scanner.nextInt();
+```
 ---
 
 ## Задача 16 (Поиск последнего значения.):
-> **Задача 16 заключается в том, что.**
+> **Задача 16 заключается в том, чтобы реализовать метод, который будет выводить индекс последнего вхождения числа 'x' в массив.**
 
 Для выполнения этого задания я создал метод **public int findLast (int[] arr, int x)**:
 ```java
@@ -556,9 +643,48 @@ public int findLast (int[] arr, int x) {
     return result;
 }
 ```
+Задаём переменную для записи ответа, которой сразу присваиваем значение -1, т.к по условиям задачи сказано, что если введёного числа нет в массиве - ответ будет '-1':
+```java
+int result = -1;
+```
+С помощью цикла **for** проверяю все числа сразу с конца массива, т.к это и будет являться последним вхождением числа:
+```java
+for (int el = arr.length - 1; el > 0; el--)
+```
+С помощью **if** проверяю, равно ли число с индексом 'el' введёному пользователем, если это так, то в ответ записываем индекс этого числа в массиве:
+```java
+if (arr[el] == x) {
+    result = el;
+    break;
+}
+```
 
 ---
 **Реализуем пользовательский ввод**
+```java
+System.out.println("Находим последний индекс вхождения числа 'x' в массив!");
+System.out.print("Введите длину массива: ");
+int userLenght16 = scanner.nextInt();
+int[] userArray16 = new int[userLenght16];
+
+System.out.print("Введите элементы массива через пробел: ");
+for (int el = 0; el < userLenght16; el++) {
+    userArray16[el] = scanner.nextInt();
+}
+
+System.out.println("Исходный массив: " + Arrays.toString(userArray16));
+
+System.out.print("Введите число x: ");
+int userNum16 = scanner.nextInt();
+System.out.println("Индекс вашего числа в массиве: " + lab1Method.findLast(userArray16, userNum16));
+```
+Запрашиваем у пользователя какой длинны должен быть наш массив, чтобы java могла выделить для этого нужную память и создаём новым массив заданной длины:
+```java
+System.out.println("Находим последний индекс вхождения числа 'x' в массив!");
+System.out.print("Введите длину массива: ");
+int userLenght16 = scanner.nextInt();
+int[] userArray16 = new int[userLenght16];
+```
 
 ---
 
