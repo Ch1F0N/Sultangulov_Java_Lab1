@@ -50,24 +50,24 @@ public class Main {
                         // Сумма знаков
                         System.out.println("Складываем последние 2 цифры числа 'x' между собой!");
                         System.out.print("Введите целое число x (Знаков в числе должно быть не менее двух): ");
-                        int userNum = scanner.nextInt();
-                        String strUserNum = Integer.toString(userNum);
+                        int userNum1 = scanner.nextInt();
+                        String strUserNum = Integer.toString(userNum1);
 
                         if (strUserNum.length() < 2) {
                             System.out.println("Число x должно состоять как минимум из двух знаков!");
                             break;
-                        } else {
-                            System.out.println("Сумма двух последних чисел вашего числа " + userNum + ": " + lab1Method.sumLastNums(userNum));
-                            System.out.println();
                         }
+
+                        System.out.println("Сумма двух последних чисел вашего числа " + userNum1 + ": " + lab1Method.sumLastNums(userNum1));
+                        System.out.println();
                         break;
 
                     case 2:
                         // Есть ли позитив
                         System.out.println("Определяем, является ли число положительным или нет! (true/false)");
                         System.out.print("Введите целое число x: ");
-                        userNum = scanner.nextInt();
-                        System.out.println("Ответ: " + lab1Method.isPositive(userNum));
+                        int userNum2 = scanner.nextInt();
+                        System.out.println("Ответ: " + lab1Method.isPositive(userNum2));
                         System.out.println();
                         break;
 
@@ -85,10 +85,10 @@ public class Main {
                         System.out.println("Определяем, делится ли одно число на другое нацело или нет! (true/false)");
                         System.out.println("Введите целые числа a и b через Enter: ");
                         System.out.print("a: ");
-                        int firstChar = scanner.nextInt();
+                        int firstNum4 = scanner.nextInt();
                         System.out.print("b: ");
-                        int secondChar = scanner.nextInt();
-                        System.out.println("Ответ: " + lab1Method.isDivisor(firstChar, secondChar));
+                        int secondNum4 = scanner.nextInt();
+                        System.out.println("Ответ: " + lab1Method.isDivisor(firstNum4, secondNum4));
                         System.out.println();
                         break;
 
@@ -100,17 +100,17 @@ public class Main {
                         System.out.println(i + ")");
                         i += 1;
                         System.out.print("a: ");
-                        int firstNum = scanner.nextInt();
+                        int firstNum5 = scanner.nextInt();
                         System.out.print("b: ");
-                        int secondNum = scanner.nextInt();
-                        int result = lab1Method.lastNumSum(firstNum, secondNum);
+                        int secondNum5 = scanner.nextInt();
+                        int result = lab1Method.lastNumSum(firstNum5, secondNum5);
                         System.out.println("Ответ: " + result);
                         while (i != 5) {
                             System.out.println(i + ")");
                             System.out.print("Введите ещё одно число: ");
-                            secondNum = scanner.nextInt();
-                            System.out.println("Ответ: " + lab1Method.lastNumSum(result, secondNum));
-                            result = lab1Method.lastNumSum(result, secondNum);
+                            secondNum5 = scanner.nextInt();
+                            System.out.println("Ответ: " + lab1Method.lastNumSum(result, secondNum5));
+                            result = lab1Method.lastNumSum(result, secondNum5);
                             i += 1;
                         }
                         System.out.println();
@@ -121,10 +121,10 @@ public class Main {
                         System.out.println("Делим два числа между собой!");
                         System.out.println("Введите целые числа x и y через Enter: ");
                         System.out.print("x: ");
-                        firstNum = scanner.nextInt();
+                        int firstNum6 = scanner.nextInt();
                         System.out.print("y: ");
-                        secondNum = scanner.nextInt();
-                        System.out.println("Ответ: " + lab1Method.safeDiv(firstNum, secondNum));
+                        int secondNum6 = scanner.nextInt();
+                        System.out.println("Ответ: " + lab1Method.safeDiv(firstNum6, secondNum6));
                         System.out.println();
                         break;
 
@@ -133,24 +133,24 @@ public class Main {
                         System.out.println("Сравниваем два числа между собой!");
                         System.out.println("Введите целые числа x и y через Enter: ");
                         System.out.print("x: ");
-                        firstNum = scanner.nextInt();
+                        int firstNum7 = scanner.nextInt();
                         System.out.print("y: ");
-                        secondNum = scanner.nextInt();
-                        System.out.println("Ответ: " + lab1Method.makeDecision(firstNum, secondNum));
+                        int secondNum7 = scanner.nextInt();
+                        System.out.println("Ответ: " + lab1Method.makeDecision(firstNum7, secondNum7));
                         System.out.println();
                         break;
 
                     case 8:
                         // Тройная сумма
-                        System.out.println("Определяем, получится ли сложив два числа получить третье!");
+                        System.out.println("Определяем, получится ли сложив два числа получить третье! (true/false)");
                         System.out.println("Введите целые числа x, y и z через Enter: ");
                         System.out.print("x: ");
-                        firstNum = scanner.nextInt();
+                        int firstNum8 = scanner.nextInt();
                         System.out.print("y: ");
-                        secondNum = scanner.nextInt();
+                        int secondNum8 = scanner.nextInt();
                         System.out.print("z: ");
-                        int thirdNum = scanner.nextInt();
-                        System.out.println("Ответ: " + lab1Method.sum3(firstNum, secondNum, thirdNum));
+                        int thirdNum8 = scanner.nextInt();
+                        System.out.println("Ответ: " + lab1Method.sum3(firstNum8, secondNum8, thirdNum8));
                         System.out.println();
                         break;
 
@@ -197,7 +197,7 @@ public class Main {
 
                     case 13:
                         // Одинаковость
-                        System.out.println("Определяем, все ли цифры в числе 'x' одинаковые!");
+                        System.out.println("Определяем, все ли цифры в числе 'x' одинаковые! (true/false)");
                         System.out.print("Введите число x: ");
                         int same = scanner.nextInt();
                         System.out.println("Ответ: " + lab1Method.equalNum(same));
@@ -225,19 +225,19 @@ public class Main {
                         // Поиск последнего значения
                         System.out.println("Находим последний индекс вхождения числа 'x' в массив!");
                         System.out.print("Введите длину массива: ");
-                        int user_lenght = scanner.nextInt();
-                        int[] user_array = new int[user_lenght];
+                        int userLenght16 = scanner.nextInt();
+                        int[] userArray16 = new int[userLenght16];
 
                         System.out.print("Введите элементы массива через пробел: ");
-                        for (int el = 0; el < user_lenght; el++) {
-                            user_array[el] = scanner.nextInt();
+                        for (int el = 0; el < userLenght16; el++) {
+                            userArray16[el] = scanner.nextInt();
                         }
 
-                        System.out.println("Исходный массив: " + Arrays.toString(user_array));
+                        System.out.println("Исходный массив: " + Arrays.toString(userArray16));
 
                         System.out.print("Введите число x: ");
-                        int user_num = scanner.nextInt();
-                        System.out.println("Индекс вашего числа в массиве: " + lab1Method.findLast(user_array, user_num));
+                        int userNum16 = scanner.nextInt();
+                        System.out.println("Индекс вашего числа в массиве: " + lab1Method.findLast(userArray16, userNum16));
                         System.out.println();
                         break;
 
@@ -245,22 +245,22 @@ public class Main {
                         // Добавление в массив
                         System.out.println("Вставляем ваше число 'x' на выбранное вами место в массиве!");
                         System.out.print("Введите длину массива: ");
-                        user_lenght = scanner.nextInt();
-                        user_array = new int[user_lenght];
+                        int userLenght17 = scanner.nextInt();
+                        int[] userArray17 = new int[userLenght17];
 
                         System.out.print("Введите элементы массива через пробел: ");
-                        for (int el = 0; el < user_lenght; el++) {
-                            user_array[el] = scanner.nextInt();
+                        for (int el = 0; el < userLenght17; el++) {
+                            userArray17[el] = scanner.nextInt();
                         }
 
-                        System.out.println("Исходный массив: " + Arrays.toString(user_array));
+                        System.out.println("Исходный массив: " + Arrays.toString(userArray17));
 
                         System.out.print("Введите число x: ");
-                        user_num = scanner.nextInt();
+                        int userNum17 = scanner.nextInt();
 
                         System.out.print("Введите индекс числа в массиве на месте которого будет стоять число 'x': ");
                         int pos = scanner.nextInt();
-                        System.out.println("Новый массив с заменой числа: " + Arrays.toString(lab1Method.add(user_array, user_num, pos)));
+                        System.out.println("Новый массив с заменой числа: " + Arrays.toString(lab1Method.add(userArray17, userNum17, pos)));
                         System.out.println();
                         break;
 
@@ -268,17 +268,17 @@ public class Main {
                         // Реверс
                         System.out.println("Делаем ваш массив задом наперёд!");
                         System.out.print("Введите длину массива: ");
-                        user_lenght = scanner.nextInt();
-                        user_array = new int[user_lenght];
+                        int userLenght18 = scanner.nextInt();
+                        int[] userArray18 = new int[userLenght18];
 
                         System.out.print("Введите элементы массива через пробел: ");
-                        for (int el = 0; el < user_lenght; el++) {
-                            user_array[el] = scanner.nextInt();
+                        for (int el = 0; el < userLenght18; el++) {
+                            userArray18[el] = scanner.nextInt();
                         }
 
-                        System.out.println("Исходный массив: " + Arrays.toString(user_array));
+                        System.out.println("Исходный массив: " + Arrays.toString(userArray18));
                         System.out.print("Массив задом-наперёд: ");
-                        lab1Method.reverse(user_array);
+                        lab1Method.reverse(userArray18);
                         System.out.println("\n");
                         break;
 
@@ -286,21 +286,21 @@ public class Main {
                         // Объединение
                         System.out.println("Склеиваем два ваших массива в один!");
                         System.out.print("Введите длину массива: ");
-                        user_lenght = scanner.nextInt();
-                        user_array = new int[user_lenght];
-                        int[] user_array2 = new int[user_lenght];
+                        int userLenght19 = scanner.nextInt();
+                        int[] userArray19 = new int[userLenght19];
+                        int[] userArray192 = new int[userLenght19];
 
                         System.out.print("Введите элементы первого массива через пробел: ");
-                        for (int el = 0; el < user_lenght; el++) {
-                            user_array[el] = scanner.nextInt();
+                        for (int el = 0; el < userLenght19; el++) {
+                            userArray19[el] = scanner.nextInt();
                         }
 
                         System.out.print("Введите элементы второго массива через пробел: ");
-                        for (int el = 0; el < user_lenght; el++) {
-                            user_array2[el] = scanner.nextInt();
+                        for (int el = 0; el < userLenght19; el++) {
+                            userArray192[el] = scanner.nextInt();
                         }
 
-                        System.out.println("Ваш новый массив: " + Arrays.toString(lab1Method.concat(user_array, user_array2)));
+                        System.out.println("Ваш новый массив: " + Arrays.toString(lab1Method.concat(userArray19, userArray192)));
                         System.out.println();
                         break;
 
@@ -308,17 +308,17 @@ public class Main {
                         // Удалить негатив
                         System.out.println("Убираем отрицательные числа из вашего массива!");
                         System.out.print("Введите длину массива: ");
-                        user_lenght = scanner.nextInt();
-                        user_array = new int[user_lenght];
+                        int userLenght20 = scanner.nextInt();
+                        int[] userArray20 = new int[userLenght20];
 
                         System.out.print("Введите элементы массива через пробел: ");
-                        for (int el = 0; el < user_lenght; el++) {
-                            user_array[el] = scanner.nextInt();
+                        for (int el = 0; el < userLenght20; el++) {
+                            userArray20[el] = scanner.nextInt();
                         }
 
-                        System.out.println("Исходный массив: " + Arrays.toString(user_array));
+                        System.out.println("Исходный массив: " + Arrays.toString(userArray20));
 
-                        System.out.println("Ваш новый массив: " + Arrays.toString(lab1Method.deleteNegative(user_array)));
+                        System.out.println("Ваш новый массив: " + Arrays.toString(lab1Method.deleteNegative(userArray20)));
                         System.out.println();
                         break;
                 }

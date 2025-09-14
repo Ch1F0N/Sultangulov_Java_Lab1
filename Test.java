@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Test {
-    // Метод, который возвращает результат сложения последних двух цифр числа "x"
+    // 1. Метод, который возвращает результат сложения последних двух цифр числа "x"
     public int sumLastNums (int x) {
         int i = 2;
         int y = 0;
@@ -17,17 +17,17 @@ public class Test {
         return result;
     }
 
-    // Метод, который возвращает true, если число положительное
+    // 2. Метод, который возвращает true, если число положительное
     public boolean isPositive (int x) {
         return x > 0;
     }
 
-    // Метод, который возвращает true, если буква заглавная
+    // 3. Метод, который возвращает true, если буква заглавная
     public boolean isUpperCase (char x) {
-        return Character.isUpperCase(x);
+        return 'A' <= x && x <= 'Z';
     }
 
-    // Метод, который возвращает true, если любое из принятых чисел делит другое нацело
+    // 4. Метод, который возвращает true, если любое из принятых чисел делит другое нацело
     public boolean isDivisor (int a, int b) {
         try {
             return a % b == 0 || b % a == 0;
@@ -37,12 +37,12 @@ public class Test {
         }
     }
 
-    // Метод, который складывает последние цифры чисел
+    // 5. Метод, который складывает последние цифры чисел
     public int lastNumSum(int a, int b) {
         return a % 10 + b % 10;
     }
 
-    // Метод, который возвращает деление x на y
+    // 6. Метод, который возвращает деление x на y
     public double safeDiv (int x, int y) {
         if (y==0) {
             return y;
@@ -50,27 +50,27 @@ public class Test {
         return (double) x / y;
     }
 
-    // Метод, который сравнивает два числа между собой
+    // 7. Метод, который сравнивает два числа между собой
     public String makeDecision (int x, int y) {
         if (x > y) {
-            return x + ">" + y;
+            return x + " > " + y;
         }
 
         else if (x < y) {
-            return x + "<" + y;
+            return x + " < " + y;
         }
 
         else {
-            return x + "==" + y;
+            return x + " == " + y;
         }
     }
 
-    // Метод, который возвращает true если из складывания любых двух чисел можно получить третье
+    // 8. Метод, который возвращает true если из складывания любых двух чисел можно получить третье
     public boolean sum3 (int x, int y, int z) {
         return x + y == z || x + z == y || y + z == x;
     }
 
-    // Метод, который возвращает строку с числом и одно из слов год/года/лет
+    // 9. Метод, который возвращает строку с числом и одно из слов год/года/лет
     public String age (int x) {
         if (x % 10 == 1 & x != 11) {
             return x + " год";
@@ -85,7 +85,7 @@ public class Test {
         }
     }
 
-    // Метод, который последовательно выводит дни недели после введённого пользователем, включительно
+    // 10. Метод, который последовательно выводит дни недели после введённого пользователем, включительно
     public void printDays (String x) {
         switch (x) {
             case "понедельник": System.out.println("понедельник");
@@ -103,7 +103,7 @@ public class Test {
         }
     }
 
-    // Метод, который выводит числа от "x" до 0 включительно
+    // 11. Метод, который выводит числа от "x" до 0 включительно
     public String reverseListNums (int x) {
         for (int i = x; i >= 0; i--) {
             System.out.println(i);
@@ -111,7 +111,7 @@ public class Test {
         return "";
     }
 
-    // Метод, который возводит число 'x' в степень 'y' с помощью цикла
+    // 12. Метод, который возводит число 'x' в степень 'y' с помощью цикла
     public int pow (int x, int y) {
         int i = x;
         while (y > 1) {
@@ -121,7 +121,7 @@ public class Test {
         return x;
     }
 
-    // Метод, который перебирает все цифры в числе 'x' и выводит true, если они одинаковые
+    // 13. Метод, который перебирает все цифры в числе 'x' и выводит true, если они одинаковые
     public boolean equalNum (int x) {
         int y = x % 10;
         int z = 0;
@@ -137,7 +137,7 @@ public class Test {
         return true;
     }
 
-    // Метод, который строит треугольник из звёздочек с помощью цикла for
+    // 14. Метод, который строит треугольник из звёздочек с помощью цикла for
     public void leftTriangle (int x) {
         String star = "*";
         String repeats = null;
@@ -147,7 +147,7 @@ public class Test {
          }
     }
 
-    // Метод, который загадывает число от 0 до 9 и запускается заново до тех пор, пока пользователь не угадает число
+    // 15. Метод, который загадывает число от 0 до 9 и запускается заново до тех пор, пока пользователь не угадает число
     public void guessGame() {
         int user_try = 0;
         Random rand = new Random();
@@ -186,7 +186,7 @@ public class Test {
         }
     }
 
-    // Метод, который находит последний индекс заданного числа в массиве
+    // 16. Метод, который находит последний индекс заданного числа в массиве
     public int findLast (int[] arr, int x) {
         int result = -1;
         for (int el = arr.length - 1; el > 0; el--) {
@@ -198,13 +198,13 @@ public class Test {
         return result;
     }
 
-    // Метод, который вставляет число 'x' на место заданного индекса pos
+    // 17. Метод, который вставляет число 'x' на место заданного индекса pos
     public int[]add (int[] arr, int x, int pos) {
         arr[pos] = x;
         return arr;
     }
 
-    // Метод, который переставляет элементы массива задом-наперёд
+    // 18. Метод, который переставляет элементы массива задом-наперёд
     public void reverse (int[] arr) {
         int [] new_arr = new int[arr.length];
         int el = 0;
@@ -215,7 +215,7 @@ public class Test {
         System.out.print(Arrays.toString(new_arr));
     }
 
-    // Метод, который склеивает два массива в один новый
+    // 19. Метод, который склеивает два массива в один новый
     public int[] concat (int[] arr1,int[] arr2) {
         int index = 0;
         int [] both_arr = new int[arr1.length + arr2.length];
@@ -232,7 +232,7 @@ public class Test {
         return both_arr;
     }
 
-    // Метод, который убирает из массива отрицательные числа
+    // 20. Метод, который убирает из массива отрицательные числа
     public int[] deleteNegative (int[] arr) {
         int index = 0;
         int negative_count = 0;
