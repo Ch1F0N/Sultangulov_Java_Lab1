@@ -685,11 +685,18 @@ System.out.print("Введите длину массива: ");
 int userLenght16 = scanner.nextInt();
 int[] userArray16 = new int[userLenght16];
 ```
+Запрашиваем у пользователя ввод элементов и расставляем их в массиве длиной 'userLenght16':
+```java
+System.out.print("Введите элементы массива через пробел: ");
+for (int el = 0; el < userLenght16; el++) {
+    userArray16[el] = scanner.nextInt();
+}
+```
 
 ---
 
 ## Задача 17 (Добавление в массив.):
-> **Задача 17 заключается в том, что.**
+> **Задача 17 заключается в том, чтобы реализовать метод, который будет ставить число 'x' в массив на индекс 'pos'.**
 
 Для выполнения этого задания я создал метод **public int[]add (int[] arr, int x, int pos)**:
 ```java
@@ -698,14 +705,35 @@ public int[]add (int[] arr, int x, int pos) {
     return arr;
 }
 ```
+Заменяем число arr[pos] на наше число 'x' и возвращаем новый массив.
 
 ---
 **Реализуем пользовательский ввод**
+```java
+System.out.println("Вставляем ваше число 'x' на выбранное вами место в массиве!");
+System.out.print("Введите длину массива: ");
+int userLenght17 = scanner.nextInt();
+int[] userArray17 = new int[userLenght17];
+
+System.out.print("Введите элементы массива через пробел: ");
+for (int el = 0; el < userLenght17; el++) {
+    userArray17[el] = scanner.nextInt();
+}
+
+System.out.println("Исходный массив: " + Arrays.toString(userArray17));
+
+System.out.print("Введите число x: ");
+int userNum17 = scanner.nextInt();
+
+System.out.print("Введите индекс числа в массиве на месте которого будет стоять число 'x': ");
+int pos = scanner.nextInt();
+System.out.println("Новый массив с заменой числа: " + Arrays.toString(lab1Method.add(userArray17, userNum17, pos)));
+```
 
 ---
 
 ## Задача 18 (Реверс.):
-> **Задача 18 заключается в том, что.**
+> **Задача 18 заключается в том, чтобы реализовать метод, который будет выводить исходный массив задом-наперёд.**
 
 Для выполнения этого задания я создал метод **public void reverse (int[] arr)**:
 ```java
@@ -719,14 +747,41 @@ public void reverse (int[] arr) {
     System.out.print(Arrays.toString(new_arr));
 }
 ```
+Создаём новый массив той же длины, что и исходный:
+```java
+int [] new_arr = new int[arr.length];
+```
+С помощью цикла **for** задаём новую переменную 'rev_el', которая будет отвечать за индекс, начиная с последнего числа исходного массива:
+```java
+for (int rev_el = arr.length - 1; rev_el > -1; rev_el--)
+```
+Присваиваем первому элементу нового массива под индексом 0 последний элемент исходного массива:
+```java
+new_arr[el] = arr[rev_el];
+el += 1;        // Переходим на следующий элемент нового массива
+```
 
 ---
 **Реализуем пользовательский ввод**
+```java
+System.out.println("Делаем ваш массив задом-наперёд!");
+System.out.print("Введите длину массива: ");
+int userLenght18 = scanner.nextInt();
+int[] userArray18 = new int[userLenght18];
 
+System.out.print("Введите элементы массива через пробел: ");
+for (int el = 0; el < userLenght18; el++) {
+    userArray18[el] = scanner.nextInt();
+}
+
+System.out.println("Исходный массив: " + Arrays.toString(userArray18));
+System.out.print("Массив задом-наперёд: ");
+lab1Method.reverse(userArray18);
+```
 ---
 
 ## Задача 19 (Объединение.):
-> **Задача 19 заключается в том, что.**
+> **Задача 19 заключается в том, чтобы реализовать метод, который будет соединять два массива в один.**
 
 Для выполнения этого задания я создал метод **public int[] concat (int[] arr1,int[] arr2)**:
 ```java
@@ -746,14 +801,48 @@ public int[] concat (int[] arr1,int[] arr2) {
     return both_arr;
 }
 ```
+Создаём новый массив, длина которого равна сумме длин двух исходных массивов:
+```java
+int [] both_arr = new int[arr1.length + arr2.length];
+```
+Используем цикл **for** для записи сначала элементов первого массива, а затем второго:
+```java
+for (int el : arr1) {
+    both_arr[index] = el;
+    index++;
+}
+
+for (int el : arr2) {
+    both_arr[index] = el;
+    index++;
+}
+```
 
 ---
 **Реализуем пользовательский ввод**
+```java
+System.out.println("Склеиваем два ваших массива в один!");
+System.out.print("Введите длину массива: ");
+int userLenght19 = scanner.nextInt();
+int[] userArray19 = new int[userLenght19];
+int[] userArray192 = new int[userLenght19];
 
+System.out.print("Введите элементы первого массива через пробел: ");
+for (int el = 0; el < userLenght19; el++) {
+    userArray19[el] = scanner.nextInt();
+}
+
+System.out.print("Введите элементы второго массива через пробел: ");
+for (int el = 0; el < userLenght19; el++) {
+    userArray192[el] = scanner.nextInt();
+}
+
+System.out.println("Ваш новый массив: " + Arrays.toString(lab1Method.concat(userArray19, userArray192)));
+```
 ---
 
 ## Задача 20 (Удалить негатив.):
-> **Задача 20 заключается в том, что.**
+> **Задача 20 заключается в том, чтобы реализовать метод, который будет убирать из массива отрицательные числа и возвращать новый уже без них.**
 
 Для выполнения этого задания я создал метод **public int[] deleteNegative (int[] arr)**:
 ```java
@@ -775,6 +864,41 @@ public int[] deleteNegative (int[] arr) {
     return clear_arr;
 }
 ```
+Для начала я считаю кол-во отрицательных чисел в исходном массиве в переменной 'negative_count', чтобы создать новый массив нужной длины без лишних элементов и использую для этого цикл **for**
+```java
+for (int el : arr) {
+    if (el < 0) {
+        negative_count += 1;
+    }
+}
+```
+Записываем в новый массив только положительные числа из исходного массива, используя цикл **for**:
+```java
+for (int el : arr) {
+    if (el > 0) {
+        clear_arr[index] = el;
+        index++;
+    }
+}
+```
 
 ---
 **Реализуем пользовательский ввод**
+```java
+System.out.println("Убираем отрицательные числа из вашего массива!");
+System.out.print("Введите длину массива: ");
+int userLenght20 = scanner.nextInt();
+int[] userArray20 = new int[userLenght20];
+
+System.out.print("Введите элементы массива через пробел: ");
+for (int el = 0; el < userLenght20; el++) {
+    userArray20[el] = scanner.nextInt();
+}
+
+System.out.println("Исходный массив: " + Arrays.toString(userArray20));
+
+System.out.println("Ваш новый массив: " + Arrays.toString(lab1Method.deleteNegative(userArray20)));
+```
+
+# Защита от ошибок
+Для защиты от неверного ввода используется конструкция **try-catch**.
