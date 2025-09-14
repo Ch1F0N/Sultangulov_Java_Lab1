@@ -181,7 +181,7 @@ public class Main {
                         int reverseNum = scanner.nextInt();
                         System.out.println("Ответ: ");
                         lab1Method.reverseListNums(reverseNum);
-                        System.out.println();
+                        System.out.println("\n");
                         break;
 
                     case 12:

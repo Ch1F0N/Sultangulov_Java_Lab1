@@ -106,7 +106,7 @@ public class Test {
     // 11. Метод, который выводит числа от "x" до 0 включительно
     public String reverseListNums (int x) {
         for (int i = x; i >= 0; i--) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
         return "";
     }
@@ -149,39 +149,39 @@ public class Test {
 
     // 15. Метод, который загадывает число от 0 до 9 и запускается заново до тех пор, пока пользователь не угадает число
     public void guessGame() {
-        int user_try = 0;
+        int userTry = 0;
         Random rand = new Random();
         int answer = rand.nextInt(0,10);
         while (true) {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Угадайте какая цифра от 0 до 9 была задана: ");
-            int user_input = scanner.nextInt();
+            int userInput = scanner.nextInt();
 
-            if (user_input == answer) {
-                user_try += 1;
-                if (user_try % 10 == 1 & user_try != 11) {
-                    System.out.println("Поздравляем, вы угадали число за " + user_try + " попытку!");
+            if (userInput == answer) {
+                userTry += 1;
+                if (userTry % 10 == 1 & userTry != 11) {
+                    System.out.println("Поздравляем, вы угадали число за " + userTry + " попытку!");
                     break;
                 }
 
-                else if (user_try % 10 == 2 || user_try % 10 == 3 || user_try % 10 == 4 & user_try != 12  & user_try != 13  & user_try != 14) {
-                    System.out.println("Поздравляем, вы угадали число за " + user_try + " попытки!");
+                else if (userTry % 10 == 2 || userTry % 10 == 3 || userTry % 10 == 4 & userTry != 12  & userTry != 13  & userTry != 14) {
+                    System.out.println("Поздравляем, вы угадали число за " + userTry + " попытки!");
                     break;
                 }
 
                 else {
-                    System.out.println("Поздравляем, вы угадали число за " + user_try + " попыток!");
+                    System.out.println("Поздравляем, вы угадали число за " + userTry + " попыток!");
                     break;
                 }
             }
 
-            else if (user_input > 9 || user_input < 0) {
+            else if (userInput > 9 || userInput < 0) {
                 System.out.println("Вы ввели число, которого нет в выборе!");
             }
 
             else {
                 System.out.println("Вы не угадали, попробуйте ещё раз!");
-                user_try += 1;
+                userTry += 1;
             }
         }
     }
