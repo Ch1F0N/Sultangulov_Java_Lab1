@@ -292,11 +292,11 @@ public String makeDecision (int x, int y) {
     }
 
     else if (x < y) {
-        return x + " < " + y;  //
+        return x + " < " + y;  // Если 'x' меньше 'y' возвращаем строку 'x < y'
     }
 
     else {
-        return x + " == " + y;  //
+        return x + " == " + y;  // Если 'x' эквивалентно 'y' возвращаем строку 'x == y'
     }
 }
 ```
